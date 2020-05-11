@@ -1,0 +1,39 @@
+{
+    "template": "\n  \n<style>\n  .albumart { \n  \twidth: 90%;   \t  \t\n  \theight: 90%;  \t  \t  \n  \tmargin-right: 5px;\n  }  \n  .artist {\n  \tfont-size: 12pt;\n  \tfont-weight: bolder;\n  }\n  .album {\n  \tfont-size: 12pt; \t\n  \t\n  }\n  .right{\n  \twidth:200px;\n  \ttext-align:left;  \t\n  }\n</style>\n\n<table>\n  <tr>\n     <th rowspan=\"4\">\n       <div ng-if=\"itemValue(config.item_albumart)!='N/A'\" >\n  \t\t<a href=\"{{itemValue(config.item_albumart)}}\">\n      <img class=\"albumart\" ng-src=\"{{itemValue(config.item_albumart)}}\" aria-hidden=\"false\" /></a>\n  </div>  \n  <div  ng-if=\"itemValue(config.item_albumart)=='N/A'\" >\n  \t\t<a href=\"https://i.pinimg.com/originals/6c/7e/94/6c7e94d9c784d4478adcad044f0bf331.jpg\" >\n      <img class=\"albumart\" ng-src=\"https://i.pinimg.com/originals/6c/7e/94/6c7e94d9c784d4478adcad044f0bf331.jpg\" aria-hidden=\"false\" /></a>\n  </div>  \n     </th>\n     <th class=\"right\" >\n       <p style=\"font-size: 15pt;color: white;\">Now Playing</p>\n       \n       <p style=\"font-size: 10;color: {{ variable | themeValue:'primary-color' }};opacity:0.8\">{{itemValue(config.item_station)}}</p>\n    </th>\n  </tr>\n  <tr>\n  \t<td class=\"right\">\n      <div>\n       \t<h4 class=\"artist\" style=\"color:{{ variable | themeValue:'primary-color' }};\">{{itemValue(config.item_artist)}}</h4>\n      \t<h5 class=\"album\">{{itemValue(config.item_album)}}</h5>\n      </div>\n      \n      <span class=\"title\">{{itemValue(config.item_title)}}</span>\n    </td>\n  </tr>\n  <tr>\n    <td class=\"right\">\n    \n    </td>\n  </tr>\n  <tr>\n  \t<td class=\"right\">\n     \t   \n    </td>\n  </tr>\n</table>\n\n\n<div class=\"row \">\n  \n  <div class=\"col-md-6\" style=\"text-align:left ;color: {{variable | themeValue:'chart-fill'}}\" >           \n    \n  \n    \n        \n  </div>  \n</div>\n\n\n  \n  ",
+    "name": "Yamaha Now Playing Widget",
+    "author": "Michael Wirth",
+    "description": "NowPlaying Widget ",
+    "settings": [
+        {
+            "type": "item",
+            "id": "item_albumart",
+            "label": "AlbumArt",
+            "description": "Item which stores the album art Url"
+        },
+        {
+            "type": "string",
+            "id": "item_station",
+            "label": "Station",
+            "description": "Item which stores the Current  Station"
+        },
+        {
+            "type": "item",
+            "id": "item_artist",
+            "label": "Artist",
+            "description": "Item which stores the current Artist"
+        },
+        {
+            "type": "item",
+            "id": "item_album",
+            "label": "Album",
+            "description": "Item which stores the current Album"
+        },
+        {
+            "type": "string",
+            "id": "item_title",
+            "label": "Title",
+            "description": "Item which stores the current Title"
+        }
+    ],
+    "readme_url": "https://community.openhab.org/t/23574"
+}
